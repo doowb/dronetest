@@ -2,7 +2,6 @@ image: node
 script:
  - npm install
  - npm test
- - docker build -t dronetest .
 deploy:
   ssh:
     target: $$DOCKER_DEPLOY_USER@$$DOCKER_DEPLOY_IP:/containers/dronetest
