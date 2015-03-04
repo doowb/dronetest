@@ -4,7 +4,7 @@ script:
  - npm test
 deploy:
   ssh:
-    target: $$DOCKER_DEPLOY_USER@$$DOCKER_DEPLOY_IP:/containers/dronetest
+    target: $$DOCKER_DEPLOY_USER:$$DOCKER_DEPLOY_PASS@$$DOCKER_DEPLOY_IP:/containers/dronetest
     artifacts:
       - ./
     cmd:
