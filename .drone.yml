@@ -7,5 +7,5 @@ deploy:
     target: $$DOCKER_DEPLOY_USER@$$DOCKER_DEPLOY_IP:/containers/dronetest
     artifacts:
       - ./
-    cmd: "cd /containers/dronetest && docker build -t doowb/dronetest . && docker run -d -t -p 8042:80 doowb/dronetest"
+    cmd: "cd /containers/dronetest && docker stop dronetest && docker build -t doowb/dronetest . && docker run -d -t -p 8042:80 -name=\"dronetest\" doowb/dronetest"
 
