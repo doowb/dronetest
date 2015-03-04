@@ -8,7 +8,6 @@ deploy:
     artifacts:
       - ./
     cmd:
-      - pwd
-      - ls -la
-      - docker ps
+      - docker build -t doowb/dronetest .
+      - docker run -p 8042:80 doowb/dronetest
 
