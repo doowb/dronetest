@@ -12,6 +12,6 @@ var port = process.env.PORT || 80;
 
 http.createServer(function (req, res) {
   res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('My port is ' + port + '\n');
+  res.end('My port is ' + port + '\nThe port is internal to a docker container.');
 }).listen(port);
 console.log('Server running on port ' + port);
