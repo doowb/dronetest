@@ -2,3 +2,4 @@ image: node
 script:
  - npm install
  - npm test
+ - echo %FOO_BAR%
