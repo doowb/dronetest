@@ -2,4 +2,14 @@ image: node
 script:
  - npm install
  - npm test
- - echo $$FOO_BAR
+ - docker build -t dronetest .
+deploy:
+  ssh:
+    target: $$DOCKER_DEPLOY_USER@$$DOCKER_DEPLOY_IP:/containers/dronetest
+    artifacts:
+      - ./
+    cmd:
+      - pwd
+      - ls -la
+      - docker ps
+
